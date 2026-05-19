@@ -8,7 +8,7 @@ import TaskItem from "./TaskItem";
 import { useAuth } from "@/context/AuthContext";
 import toast from "react-hot-toast";
 
-const API = "http://localhost:3001/tasks";
+const API = `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001"}/tasks`;
 
 export default function TasksClient() {
   const [tasks, setTasks] = useState<Task[]>([]);

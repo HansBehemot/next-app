@@ -30,7 +30,7 @@ export default function RegisterPage() {
   });
 
   async function onSubmit(data: FormData) {
-    const res = await fetch("http://localhost:3001/auth/register", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001"}/auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: data.email, password: data.password }),
